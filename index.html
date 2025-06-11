@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator - Create Strong & Random Passwords|| Passwordbuilder</title>
+    <meta name="description" content="Generate strong, secure, and random passwords to protect your online accounts. A simple, one-page tool for all your password needs.">
+    <meta name="keywords" content="password generator, secure password, strong password, Password builder,password maker, random password generator, password creator, how to generate a password">
+    <script src="https://cdn.tailwindcss.com">
+  </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-md">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+            <a class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 flex items-center space-x-2" href="index.html">
+                <img alt="Lock icon" class="w-8 h-8" src="image.png" width="32" height="32">
+                <span>Passwordbuilder</span>
+            </a>
+            <nav class="hidden md:flex space-x-8 font-semibold text-gray-700 dark:text-gray-300">
+                <a class="hover:text-indigo-600 dark:hover:text-indigo-400 transition" href="#home">Home</a>
+                <a class="hover:text-indigo-600 dark:hover:text-indigo-400 transition" href="#how-it-works">How It Works</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button aria-label="Toggle Dark Mode" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition text-xl focus:outline-none" id="theme-toggle" title="Toggle Light/Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a class="hidden sm:inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-4 py-2 rounded-md transition" href="#generator">Generate Password</a>
+            </div>
+            <button aria-label="Open Menu" class="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <nav class="md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 hidden" id="mobile-menu">
+            <a class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition" href="#home">Home</a>
+            <a class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-indigo-50 dark:hover:bg-gray-700 transition" href="#how-it-works">How It Works</a>
+            <a class="block px-4 py-3 bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition" href="#generator">Generate Password</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20">
+        <section id="home" class="text-center max-w-3xl mx-auto mb-16 px-4 sm:px-0">
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-indigo-600 dark:text-indigo-400 leading-tight mb-4">
+                Generate Strong & Secure Passwords Instantly
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-700 dark:text-gray-300 mb-8">
+                Protect your accounts with random, uncrackable passwords.
+            </p>
+            <a class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md text-lg transition" href="#generator">
+                Get Started
+            </a>
+        </section>
+
+        <section id="generator" class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg max-w-4xl mx-auto p-8">
+            <h2 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-6 text-center">
+                Password Generator
+            </h2>
+            <form id="password-form" class="space-y-6">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-6">
+                    <label class="font-semibold text-gray-700 dark:text-gray-300 mb-2 sm:mb-0 w-full sm:w-auto" for="length">Password Length:</label>
+                    <input type="range" id="length" name="length" min="6" max="32" value="16" class="w-full sm:w-64">
+                    <output class="ml-4 font-mono text-indigo-600 dark:text-indigo-400 w-12 text-center" for="length" id="length-output">16</output>
+                </div>
+                <fieldset class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <label class="inline-flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" id="uppercase" name="uppercase" class="form-checkbox h-5 w-5 text-indigo-600" checked>
+                        <span class="text-gray-700 dark:text-gray-300">Include Uppercase (A-Z)</span>
+                    </label>
+                    <label class="inline-flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" id="lowercase" name="lowercase" class="form-checkbox h-5 w-5 text-indigo-600" checked>
+                        <span class="text-gray-700 dark:text-gray-300">Include Lowercase (a-z)</span>
+                    </label>
+                    <label class="inline-flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" id="numbers" name="numbers" class="form-checkbox h-5 w-5 text-indigo-600" checked>
+                        <span class="text-gray-700 dark:text-gray-300">Include Numbers (0-9)</span>
+                    </label>
+                    <label class="inline-flex items-center space-x-2 cursor-pointer">
+                        <input type="checkbox" id="symbols" name="symbols" class="form-checkbox h-5 w-5 text-indigo-600" checked>
+                        <span class="text-gray-700 dark:text-gray-300">Include Symbols (!@#)</span>
+                    </label>
+                </fieldset>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4 space-y-4 sm:space-y-0">
+                    <button type="submit" id="generate-btn" class="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-md transition">
+                        Generate Password
+                    </button>
+                    <button type="button" id="regenerate-btn" class="flex-1 bg-gray-300 dark:bg-gray-700 text-gray-600 dark:text-gray-300 font-semibold px-6 py-3 rounded-md transition cursor-not-allowed" disabled>
+                        Regenerate
+                    </button>
+                </div>
+                <div class="mt-6 relative">
+                    <label class="block font-semibold mb-2 text-gray-700 dark:text-gray-300" for="password-output">Your Generated Password</label>
+                    <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2">
+                        <input type="text" id="password-output" class="w-full bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-md px-4 py-3 font-mono text-lg tracking-widest text-indigo-600 dark:text-indigo-400" readonly placeholder="Your password will appear here">
+                        <div class="flex space-x-2 w-full sm:w-auto">
+                            <button type="button" id="copy-btn" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-md transition" title="Copy to clipboard">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <button type="button" id="download-btn" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-md transition" title="Download password">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <p id="copy-msg" class="absolute right-0 top-full mt-1 text-sm text-green-600 dark:text-green-400 opacity-0 transition-opacity"></p>
+                </div>
+            </form>
+        </section>
+
+        <section id="how-it-works" class="max-w-4xl mx-auto mt-20 px-4 sm:px-0">
+            <h2 class="text-3xl font-bold text-indigo-600 dark:text-indigo-400 mb-10 text-center">
+                How It Works
+            </h2>
+            <div class="space-y-8">
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex items-start space-x-4">
+                    <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">1.</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Customize Your Password</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Use the slider to set the desired length of your password. Then, select the character types you want to include: uppercase letters, lowercase letters, numbers, and symbols.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex items-start space-x-4">
+                    <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">2.</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Generate Your Password</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Click the "Generate Password" button. A strong, random password based on your selections will instantly appear in the output box.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow p-6 flex items-start space-x-4">
+                    <div class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">3.</div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Copy or Download</h3>
+                        <p class="text-gray-700 dark:text-gray-300">Once your password is generated, you can click the copy button to save it to your clipboard or the download button to save it as a text file on your device.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700 py-8 mt-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <nav class="flex space-x-6 text-gray-700 dark:text-gray-300 font-semibold text-sm">
+                <a class="hover:text-indigo-600 dark:hover:text-indigo-400 transition" href="privacy.html">Privacy Policy</a>
+                <a class="hover:text-indigo-600 dark:hover:text-indigo-400 transition" href="mailto:tanweer32100@gmail.com">Contact</a>
+            </nav>
+            <p class="text-gray-600 dark:text-gray-400 text-sm">
+                © 2025 Passwordbuilder. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
